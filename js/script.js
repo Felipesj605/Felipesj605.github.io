@@ -1,6 +1,6 @@
 /**
  * AMA Recicláveis - Website JavaScript
- * Handles interactivity, smooth scrolling, mobile menu, and form handling
+ * Handles interactivity, smooth scrolling, and mobile menu
  */
 
 (function() {
@@ -120,74 +120,6 @@
             scrollIndicator.style.opacity = '1';
         }
     }
-
-
-    // Show notification
-    function showNotification(message, type = 'info') {
-        // Remove existing notification if any
-        const existingNotification = document.querySelector('.notification');
-        if (existingNotification) {
-            existingNotification.remove();
-        }
-
-        // Create notification element
-        const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.textContent = message;
-        
-        // Add styles
-        Object.assign(notification.style, {
-            position: 'fixed',
-            top: '100px',
-            right: '20px',
-            padding: '1rem 1.5rem',
-            backgroundColor: type === 'error' ? '#e53e3e' : type === 'success' ? '#48bb78' : '#4299e1',
-            color: '#ffffff',
-            borderRadius: '8px',
-            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
-            zIndex: '10000',
-            animation: 'slideInRight 0.3s ease',
-            maxWidth: '400px',
-            fontSize: '0.95rem',
-            fontWeight: '500'
-        });
-
-        document.body.appendChild(notification);
-
-        // Remove notification after 5 seconds
-        setTimeout(() => {
-            notification.style.animation = 'slideOutRight 0.3s ease';
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        }, 5000);
-    }
-
-    // Add CSS animations for notifications
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        @keyframes slideOutRight {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
 
     // Lazy load images
     function lazyLoadImages() {
