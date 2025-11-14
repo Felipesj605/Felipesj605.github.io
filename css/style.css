@@ -733,9 +733,8 @@ section {
 
 .footer-section:nth-child(2) {
     flex: 1;
-    text-align: center;
+    text-align: left;
     max-width: 200px;
-    margin: 0 auto;
 }
 
 .footer-section:last-child {
@@ -800,9 +799,6 @@ section {
     text-align: left;
 }
 
-.footer-section:nth-child(2) .footer-title {
-    text-align: center;
-}
 
 .footer-links {
     display: flex;
